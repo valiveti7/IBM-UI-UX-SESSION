@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+// CRAETE THE CLASS & OBJECT IN ES6 
+class sciCal{
+// private variable here 
+ 
+    constructor(opposite,adjacent,hypotenuse){
+        this.opposite=opposite;
+        this.adjacent=adjacent;
+        this.hypotenuse=hypotenuse;
+
+    }
+    #cosMethod(){
+        return Math.acos(this.adjacent/this.hypotenuse)
+    }
+    #sinMethod(){
+        return Math.asin(this.opposite/this.hypotenuse)
+    }
+    #tanMethod(){
+        return Math.atan(this.opposite/this.adjacent)
+    }
+   
+    precosMethod(){
+
+console.log('call the private cosMethod -->');
+
+return this.#cosMethod();
+}
+ 
+presinMethod(){
+
+console.log('call the private sinMethod -->');
+
+return this.#sinMethod();
+}
+pretanMethod(){
+
+console.log('call the private tanMethod -->');
+
+return this.#tanMethod();
+}
+}
+
+sciCal.prototype.sqrtMethod=function(n){
+        return Math.sqrt(n)
+    }
+let S =new sciCal(4 ,3,5);
+console.log(S.precosMethod());
+console.log(S.presinMethod());
+console.log(S.pretanMethod());
+console.log("square root of given number is "+S.sqrtMethod(16));
+</script>
+</head>
+<body>
+</body>
+</html>
